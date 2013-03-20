@@ -31,7 +31,7 @@ class Coordinates
 		puts "#{@distance_z}"
 	end
 
-	def plot(slope,y,number_of_points)
+	def plot_pos(slope,y,number_of_points)
 		@slope = slope
 		@y = y
 		@x = 0
@@ -42,5 +42,42 @@ class Coordinates
 			@x += 1
 			puts "(#{@x},#{@y})"
 		end
+	end
+
+	def plot_neg(slope,y,number_of_points)
+		@slope = slope
+		@y = y
+		@x = 0
+		@number_of_points = number_of_points
+		while @number_of_points > 0
+			@number_of_points -= 1
+			@y -= @slope
+			@x -= 1
+			puts "(#{@x},#{@y})"
+		end
+	end
+
+	def plot(slope,y,number_of_points)
+		@slope = slope
+		@y = y
+		@x = 0
+		@number_of_points_one = number_of_points
+		@number_of_points_two = number_of_points
+		while @number_of_points_one > 0
+			@number_of_points_one -= 1
+			@y += @slope
+			@x += 1
+			puts "pos::(#{@x},#{@y})"
+		end
+		while @number_of_points_two > 0
+			@number_of_points_two -= 1
+			@y -= @slope
+			@x -= 1
+			puts "neg::(#{@x},#{@y})"
+		end
+	end
+
+	def soq_plot
+		
 	end
 end

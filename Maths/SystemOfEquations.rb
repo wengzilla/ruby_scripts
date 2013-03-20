@@ -1,20 +1,28 @@
+load "Coordinates.rb"
 class SystemOfEquations
-	def self.calculate(slope_one,y_one,slope_two,y_two)
+	def self.calculate_eliminate(x_coef_one,y_coef_one,integer_one,x_coef_two,y_coef_two,integer_two)
+		@x_coef_one = x_coef_one
+		@y_coef_one = y_coef_one
+		@integer_one = integer_one
+		@x_coef_two = x_coef_two
+		@y_coef_two = y_coef_two
+		@integer_two = integer_two
+
+		@y_coef = @y_coef_one -= @y_coef_two
+		@x_coef = @x_coef_one -= @x_coef_two
+		if @y_coef == 0
+			@y_coef = 1
+		end 
+		@y = ((@integer_one -= @integer_two) / @y_coef)
+		@integer_one = @integer_one -= (@y * @y_coef)
+		@x = @integer_one / @x_coef
+		puts "(#{@x}, #{@y})"
+	end
+
+	def self.calculate_graph(slope_one,y_int_one,slope_two,y_int_two)
 		@slope_one = slope_one
-		@y_one = y_one
-		@x_one = 0
+		@y_int_one = y_int_one
 		@slope_two = slope_two
-		@y_two = y_two
-		@x_two = 0
-		@points_tracked = 0
-		while @y_one != @y_two && @x_one != @x_two
-			@points_tracked += 1
-			@y_one += @slope_one
-			@x_one += 1
-			@y_two += @slope_two
-			@x_two += 1
-		end
-		puts "(#{@x_one}, #{@y_one})"
-		@points_tracked
+		@y_int_two = y_int_two
 	end
 end
