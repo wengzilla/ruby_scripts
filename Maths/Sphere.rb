@@ -6,12 +6,18 @@ class Sphere
 	end
 
 	def volume
-		@volume = ((((Exponent.new(@radius,3).calculate) * 4) / 3) * @pi)
+		@volume = ((((Exponent.calculate(@radius,3)) * 4) / 3) * @pi)
 		puts "#{@volume} ^ 3"
 	end
 
 	def surface_area
-		@surface_area = (Exponent.new(((4 * @pi) * @radius),2).calculate) 
+		@surface_area = (Exponent.calculate(((4 * @pi) * @radius),2)) 
 		puts "#{@surface_area} ^ 2"
+	end
+
+	def self.help
+		puts "initialize(radius)"
+		puts "volume"
+		puts "surface_area"
 	end
 end

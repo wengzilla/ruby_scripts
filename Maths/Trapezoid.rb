@@ -12,4 +12,10 @@ class Trapezoid
 	def perimeter
 		@perimeter = (@base_one + @base_two + ((RightTriangle.new(@height,(@base_one - @base_two)).hypotenuse) * 2))
 	end
+
+	def self.help
+		puts "initialize(base_one,base_two,height)"
+		puts "area"
+		puts "perimeter"
+	end
 end

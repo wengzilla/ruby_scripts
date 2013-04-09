@@ -1,6 +1,6 @@
 class Googol
 	def initialize
-		@googol = Exponent.new(10,100).calculate
+		@googol = Exponent.calculate(10,100)
 	end
 
 	def googol
@@ -8,28 +8,47 @@ class Googol
 	end
 
 	def googols
-		Exponent.new(10,100).calculates
+		Exponent.calculates(10,100)
 	end
 
 	def googolplex		
-		@googolplex = Exponent.new(10,@googol).calculate
+		@googolplex = Exponent.calculate(10,@googol)
 	end
 
 	def googolplexs
-		Exponent.new(10,@googol).calculates
+		Exponent.calculates(10,@googol)
 	end
 
 	def googolplexr
-		Exponent.new(10,@googol).calculater
+		Exponent.calculater(10,@googol)
 	end
 
 	def googolplexplex
 		@googolplex = Googol.new.googolplex
-		@googolplexplex = Exponent.new(@googolplex,@googolplex)
+		@googolplexplex = Exponent.calculate(@googolplex,@googolplex)
 	end
 
 	def googolplexplexplex
+		@googolplex = Googol.new.googolplex
 		@googolplexplex = Googol.new.googolplexplex
-		@googolplexplexplex = Exponent.new(@googolplexplex,@googolplexplex)
+		@googolplexplexplex = Exponent.calculate(@googolplexplex,@googolplex)
+	end
+
+	def googolplexplexplexplex
+		@googolplex = Googol.new.googolplex
+		@googolplexplex = Googol.new.googolplexplex
+		@googolplexplexplexplex = Exponent.calculate(@googolplexplex,@googolplexplex)
+	end
+
+	def self.help
+		puts "initialize"
+		puts "googol"
+		puts "googols"
+		puts "googolplex"
+		puts "googolplexs"
+		puts "googolplexr"
+		puts "googolplexplex"
+		puts "googolplexplexplex"
+		puts "googolplexplexplexplex"
 	end
 end

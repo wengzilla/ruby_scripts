@@ -24,60 +24,15 @@ class Coordinates
 		@x_two = x_two
 		@y_two = y_two
 		@z_two = z_two
-		@x = (Exponent.new((@x_two - @x_one)).calculate)
-		@y = (Exponent.new((@y_two - @y_one)).calculate)
-		@z = (Exponent.new((@z_two - @z_one)).calculate)
+		@x = (Exponent.calculate((@x_two - @x_one)))
+		@y = (Exponent.calculate((@y_two - @y_one)))
+		@z = (Exponent.calculate((@z_two - @z_one)))
 		@distance_z = Math.sqrt(@x + @y + @z)
-		puts "#{@distance_z}"
 	end
 
-	def plot_pos(slope,y,number_of_points)
-		@slope = slope
-		@y = y
-		@x = 0
-		@number_of_points = number_of_points
-		while @number_of_points > 0
-			@number_of_points -= 1
-			@y += @slope
-			@x += 1
-			puts "(#{@x},#{@y})"
-		end
-	end
-
-	def plot_neg(slope,y,number_of_points)
-		@slope = slope
-		@y = y
-		@x = 0
-		@number_of_points = number_of_points
-		while @number_of_points > 0
-			@number_of_points -= 1
-			@y -= @slope
-			@x -= 1
-			puts "(#{@x},#{@y})"
-		end
-	end
-
-	def plot(slope,y,number_of_points)
-		@slope = slope
-		@y = y
-		@x = 0
-		@number_of_points_one = number_of_points
-		@number_of_points_two = number_of_points
-		while @number_of_points_one > 0
-			@number_of_points_one -= 1
-			@y += @slope
-			@x += 1
-			puts "pos::(#{@x},#{@y})"
-		end
-		while @number_of_points_two > 0
-			@number_of_points_two -= 1
-			@y -= @slope
-			@x -= 1
-			puts "neg::(#{@x},#{@y})"
-		end
-	end
-
-	def soq_plot
-		
+	def self.help
+		puts "midpoint"
+		puts "distance"
+		puts "distance_z"
 	end
 end

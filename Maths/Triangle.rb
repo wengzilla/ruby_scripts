@@ -7,4 +7,9 @@ class Triangle
 	def area
 		@area = ((@base * @height) / 2)
 	end
+
+	def self.help
+		puts "initalize(base,height)"
+		puts "area"
+	end
 end

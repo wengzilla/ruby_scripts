@@ -64,4 +64,27 @@ class Fractions
 		puts "-"
 		puts "#{@b}"
 	end
+
+	def subtract(a_one,b_one,a_two,b_two)
+		@a_one = a_one
+		@b_one = b_one
+		@a_two = a_two
+		@b_two = b_two
+		@a = ((@a_one * @b_two) - (@a_two * @b_one))
+		@b = (@b_one * @b_two)
+		puts "#{@a}"
+		puts "-"
+		puts "#{@b}"
+	end
+
+	def self.help
+		puts "reciprocal(a,b)"
+		puts "to_s(a,b)"
+		puts "decimal(a,b)"
+		puts "percent(a,b)"
+		puts "multiply(a_one,b_one,a_two,b_two)"
+		puts "divide(a_one,b_one,a_two,b_two)"
+		puts "add(a_one,b_one,a_two,b_two)"
+		puts "subtract(a_one,b_one,a_two,b_two)"
+	end
 end

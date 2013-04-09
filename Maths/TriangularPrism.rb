@@ -14,4 +14,10 @@ class TriangularPrism
 		@surface_area = ((@length * @height * 4) + (@height * @width))
 		puts "#{@surface_area} ^ 2"
 	end
+
+	def self.help
+		puts "initialize(length,width,height)"
+		puts "volume"
+		puts "surface_area"
+	end
 end

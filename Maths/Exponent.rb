@@ -1,11 +1,5 @@
 class Exponent
-	def initialize(x,power = 2)
-		@x = x
-		@power = power.to_i
-		@y = @x
-	end
-	
-	def calculate
+	def self.calculate(x,power = 2)
 		while @power > 1
 			@power -= 1
 			@y = @y * @x
@@ -13,7 +7,7 @@ class Exponent
 		@y
 	end
 
-	def calculates
+	def self.calculates(x,power = 2)
 		while @power > 1
 			puts "#{@y}"
 			@power -= 1
@@ -22,7 +16,7 @@ class Exponent
 		@y
 	end
 
-	def calculater
+	def self.calculater(x,power = 2)
 		@extra_power = 0
 		while @power > 1
 			@power -= 1
@@ -34,5 +28,11 @@ class Exponent
 			end
 		end
 		@y
+	end
+
+	def self.help
+		puts "calculate(x,power = 2)"
+		puts "calculates(x,power = 2)"
+		puts "calculater(x,power = 2)"
 	end
 end
