@@ -1,10 +1,11 @@
 class Exponent
 	def self.calculate(x,power = 2)
-		while @power > 1
-			@power -= 1
-			@y = @y * @x
+		y = 1
+		while power > 1
+			power -= 1
+			y = y * x
 		end
-		@y
+		y
 	end
 
 	def self.calculates(x,power = 2)

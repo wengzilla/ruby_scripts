@@ -1,3 +1,5 @@
+require 'Maths/Exponent'
+
 class Semicircle
 	def initialize(radius)
 		@radius = radius
