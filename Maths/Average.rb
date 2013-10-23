@@ -1,18 +1,24 @@
 class Average
-	def self.mean(number_of_values)
-		@number_of_values = number_of_values
-		@number_of_values_unmodified = number_of_values
-		@sum_of_values = 0
-		while @number_of_values != 0
-			@number_of_values -= 1
-			puts "Please enter a value"
-			value = gets.chomp
-			@sum_of_values = @sum_of_values + value.to_i
-		end
-		@mean = (@sum_of_values / @number_of_values_unmodified)
+	def self.mean(values)
+    sum(values).to_f / values.size
 	end
 
-	def self.help
-		puts "mean(number_of_values)"		
-	end
+  def self.sum(values)
+    values.inject(:+)
+  end
 end
+
+# ask user for input
+# @values = []
+# puts "Enter your numbers"
+# begin
+#   @value = gets.chomp
+#   # continue asking until user types quit
+#   @values << @value.to_i unless @value == "quit"
+#   puts @values.inspect
+# end until @value == "quit"
+
+# puts Average.mean(@values)
+
+# store values in an array
+# pass array to average class
